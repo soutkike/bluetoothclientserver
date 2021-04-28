@@ -168,7 +168,7 @@ public class BluetoothService {
 
             // Creamos un socket para escuchar las peticiones de conexion
             try {
-                tmpServerSocket = bAdapter.listenUsingRfcommWithServiceRecord(NOMBRE_SEGURO, MY_UUID);
+                tmpServerSocket = bAdapter.listenUsingRfcommWithServiceRecord(NOMBRE_SEGURO, BTMODULEUUID);
                 Log.e("HILO-SERVIDOR", "HiloServidor(): Creado");
 
             } catch(IOException e) {
@@ -261,8 +261,8 @@ public class BluetoothService {
 
             // Obtenemos un socket para el dispositivo con el que se quiere conectar
             try {
-                tmpSocket = dispositivo.createRfcommSocketToServiceRecord(MY_UUID);
-                //tmpSocket = dispositivo.createRfcommSocketToServiceRecord(BTMODULEUUID);
+                //tmpSocket = dispositivo.createRfcommSocketToServiceRecord(MY_UUID);
+                tmpSocket = dispositivo.createRfcommSocketToServiceRecord(BTMODULEUUID);
             } catch (IOException e) {
                 Log.e("HILO-CLIENTE", "HiloCliente.HiloCliente(): Error al abrir el socket", e);
             }
