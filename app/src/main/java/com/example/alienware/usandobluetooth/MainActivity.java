@@ -147,14 +147,17 @@ public class MainActivity extends Activity {
                 // Extraemos el dispositivo del intent mediante la clave BluetoothDevice.EXTRA_DEVICE
                 BluetoothDevice dispositivo = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
 
+                if(!arrayDevices.contains(dispositivo)){
+                    arrayDevices.add(dispositivo);
+                    String descripcionDispositivo = dispositivo.getName() + " [" + dispositivo.getAddress() + "]";
+                    Toast.makeText(getBaseContext(), "Dispositivo Detectado: " + descripcionDispositivo, Toast.LENGTH_SHORT).show();
+                }
+
                 // Añadimos el dispositivo al array
-                arrayDevices.add(dispositivo);
 
                 // Le asignamos un nombre del estilo NombreDispositivo [00:11:22:33:44]
-                String descripcionDispositivo = dispositivo.getName() + " [" + dispositivo.getAddress() + "]";
 
                 // Mostramos que hemos encontrado el dispositivo por el Toast
-                Toast.makeText(getBaseContext(), "Dispositivo Detectado: " + descripcionDispositivo, Toast.LENGTH_SHORT).show();
             }
             // Codigo que se ejecutara cuando el Bluetooth finalice la busqueda de dispositivos.
             else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action))
