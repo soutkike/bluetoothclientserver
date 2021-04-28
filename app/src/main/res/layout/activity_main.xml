@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnBluetooth"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="onClick"
+         />
+
+    <Button
+        android:text="Buscar Bluetooth"
+        android:id="@+id/btnBuscarDispositivo"
+        android:enabled="false"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="onClick"
+        />
+
+    <ListView
+        android:id="@+id/lvDispositivos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnServidor"
+            android:text="Create Server"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onServer"
+            />
+
+        <TextView
+            android:text="Info"
+            android:textSize="40dp"
+            android:id="@+id/tvMensaje"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:text="Create Client"
+            android:id="@+id/btnCliente"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClient"
+             />
+
+        <EditText
+            android:text="1"
+            android:textSize="40dp"
+            android:id="@+id/etDataSend"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:text="Send"
+            android:id="@+id/btnDataSend"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onDataSend"
+            />
+    </LinearLayout>
+
+</LinearLayout>
