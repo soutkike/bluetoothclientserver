@@ -81,7 +81,7 @@ public class MainActivity extends Activity {
         if(bAdapter.isEnabled()){
             btnBluetooth.setText("Desactivar");
             btnBuscarDispositivo.setEnabled(true);
-            Log.d("e","cambio")
+            Log.d("e","cambio");
         }
         else
             btnBluetooth.setText("Activar");
