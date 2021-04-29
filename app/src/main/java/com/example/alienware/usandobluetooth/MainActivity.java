@@ -165,6 +165,10 @@ public class MainActivity extends Activity {
             {
                 Log.e("ON-RECIEVE", "ACTION_DISCOVERY_FINISHED");
 
+                if(arrayDevices.isEmpty()){
+
+                }
+
                 // Acciones a realizar al finalizar el proceso de descubrimiento
                 // Instanciamos un nuevo adapter para el ListView mediante la clase que acabamos de crear
                 ArrayAdapter arrayAdapter = new BluetoothDeviceArrayAdapter(getBaseContext(), android.R.layout.simple_list_item_2, arrayDevices);
@@ -192,6 +196,13 @@ public class MainActivity extends Activity {
                 break;
 
             case R.id.btnBuscarDispositivo:
+
+                if (bAdapter.getScanMode() != BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE) {
+                    Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
+                    discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
+                    startActivity(discoverableIntent);
+                }
+
                 if(arrayDevices != null)
                     arrayDevices.clear();
 
