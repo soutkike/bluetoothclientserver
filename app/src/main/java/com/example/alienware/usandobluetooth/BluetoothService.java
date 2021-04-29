@@ -121,12 +121,12 @@ public class BluetoothService {
                             byte[] out_buffer = saludo.getBytes();
                             bytes = out_buffer.length;
                             outputStream.write(out_buffer);
-
                             handler.obtainMessage(MSG_ESCRIBIR, bytes, -1, out_buffer).sendToTarget();
+                            this.NEXT_ACCION = MSG_NINGUNO;
                             break;
                     }
 
-                    this.NEXT_ACCION = MSG_NINGUNO;
+
 
                 }
                 catch(IOException e) {
