@@ -191,7 +191,6 @@ public class BluetoothService {
             // En el momento en el que entre una nueva conexion,
             while(estado != ESTADO_CONECTADO)
             {
-                Log.e("HILO-SERVIDOR","BUSCANDO CLIENTE");
                 try {
                     // Cuando un cliente solicite la conexion se abrirá el socket.
                     socket = serverSocket.accept();
